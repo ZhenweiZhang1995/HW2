@@ -6,8 +6,8 @@ new Vue({
   el: '#app',
   methods: {
     cancel() {
-        this.itemTitle = '';
-        this.itemContent = '';
+        this.newItemTitle = '';
+        this.newItemContent = '';
       },
       addItem() {
         this.items.push({
@@ -22,11 +22,8 @@ new Vue({
       editBtn() {
         alert("Still under constrection");
       },
-      done() {
-        this.finished = true;
-        // items.$remove(this.itemTitle);
-        // print(items[0]);
-        // print($vm0.items);
+      done(i) {
+        i.finished = true;
       }
   },
 
