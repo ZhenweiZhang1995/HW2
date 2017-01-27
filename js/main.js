@@ -39,15 +39,18 @@ new Vue({
     items: [{
       itemTitle: "Watch a movie",
       itemContent: "Zootopia on Sunday 6pm ",
-      favorite: true
+      favorite: true,
+      finished: false
     }, {
       itemTitle: "Finish STOR415 Homework",
       itemContent: "Finish your homework before you do anything else!!! ",
-      favorite: false
+      favorite: false,
+      finished: false
     }, {
       itemTitle: "Play Overwatch",
       itemContent: "OK Let's do it",
-      favorite: false
+      favorite: false,
+      finished: false
     }]
   }
   // methods: {
