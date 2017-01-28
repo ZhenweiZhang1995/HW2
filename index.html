@@ -21,33 +21,22 @@
           <transition name="fade">
             <div class="card" v-show ="!item.finished">
               <div class="card-header">
-                <p class="card-header-title">{{ item.itemTitle }}</p>
+                <p class="card-header-title" v-if="!editStatus(item)">{{ item.itemTitle }}</p>
+                <input type="text" class="input" v-model="item.itemTitle" v-else/>
               </div>
               <div class="card-content">
-                <p>{{ item.itemContent }}</p>
+                <p v-if="!editStatus(item)">{{ item.itemContent }}</p>
+                <input type="text" class="input" v-model="item.itemContent" v-else/>
               </div>
               <footer class="card-footer">
-                <a class="card-footer-item" @click="editBtn">Edit</a>
+                <a class="card-footer-item" @click="editBtn(item)" v-if="!editStatus(item)">Edit</a>
+                <a class="card-footer-item" @click="finishEditBtn(item)" v-else>Finish editting</a>
                 <a class="card-footer-item" @click="done(item)">Done</a>
               </footer>
             </div>
           </transition>
         </template>
-          <!-- </div> -->
 
-
-          <!-- <div class="card">
-            <div class="card-header">
-              <p class="card-header-title">Todo Item Title</p>
-            </div>
-            <div class="card-content">
-              <p>My First Todo Item</p>
-            </div>
-            <footer class="card-footer">
-              <a class="card-footer-item">Edit</a>
-              <a class="card-footer-item">Done</a>
-            </footer>
-          </div> -->
 
         </section>
 

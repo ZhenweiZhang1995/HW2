@@ -13,17 +13,27 @@ new Vue({
         this.items.push({
           itemTitle: this.newItemTitle,
           itemContent: this.newItemContent,
-          favorite: this.newFavorite
+          favorite: this.newFavorite,
+          finished: false,
+          editing: false
         })
         this.newItemTitle = '';
         this.newItemContent = '';
         this.newFavorite = false;
       },
-      editBtn() {
-        alert("Still under constrection");
-      },
       done(i) {
         i.finished = true;
+      },
+      editBtn(i) {
+        // i.itemTitle = "";
+        // i.itemContent = "";
+        i.editing = true;
+      },
+      editStatus(i) {
+        return i.editing;
+      },
+      finishEditBtn(i) {
+        i.editing = false;
       }
   },
 
@@ -32,35 +42,25 @@ new Vue({
     newItemContent: '',
     finished: false,
     newFavorite: false,
-    editingItem: null,
+    editing: false,
     items: [{
       itemTitle: "Watch a movie",
       itemContent: "Zootopia on Sunday 6pm ",
       favorite: true,
-      finished: false
+      finished: false,
+      editing: false
     }, {
       itemTitle: "Finish STOR415 Homework",
       itemContent: "Finish your homework before you do anything else!!! ",
       favorite: false,
-      finished: false
+      finished: false,
+      editing: false
     }, {
       itemTitle: "Play Overwatch",
       itemContent: "OK Let's do it",
       favorite: false,
-      finished: false
+      finished: false,
+      editing: false,
     }]
   }
-  // methods: {
-  //   cancel() {
-  //     this.itemTitle = '';
-  //     this.itemContent = '';
-  //   }
-  //
-  //   editBtn() {
-  //     alert("Still under constrection");
-  //   }
-  //   done() {
-  //     alert("Still under constrection");
-  //   }
-  // }
 });
